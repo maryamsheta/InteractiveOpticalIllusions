@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+body {
+  font-family: Sour Gummy, sans-serif;
+  background-color: #ffffff;
+}
+
+main {
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  border: 2.5px solid;
+  border-radius: 0.25rem;
+}
+
+i {
+  padding: 2rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: black;
+  font-size: 2rem;
+}
+
+
+input[type="color"] {
+  width: 10rem;
+  height: 2rem;
+  background: none;
+}
+
+.colorPicker {
+  z-index: 10;
+  position: absolute;
+  border-radius: 0.25rem;
+  border: 2.5px solid;
+}
