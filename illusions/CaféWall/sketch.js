@@ -54,7 +54,3 @@ function mouseDragged() {
     }
   }
 }
-
-function touchStarted() {
-  return false; 
-}
