@@ -1,2 +1,5 @@
 # InteractiveOpticalIllusions
-This web-based project features 10 interactive optical illusions designed to challenge users' perception. Built with p5.js, it lets users engage with visuals that play tricks on the mind and uncover the hidden truths behind each illusion in a fun, interactive way. Note: Some illusions may not work properly on touch devices.
+Welcome to a web-based collection of 10 mind-bending optical illusions! This project is designed to mess with your perception in a fun and interactive way. Built with p5.js, you’ll get to play with illusions that challenge how you see the world.
+![screenshot-1739823057166](https://github.com/user-attachments/assets/4a92febe-0eb4-44f6-9cec-c93d92514bf2)
+
+### Note: Some interactions may not work properly on touch devices.
