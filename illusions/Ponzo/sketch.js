@@ -30,7 +30,7 @@ function draw() {
   drawGround();
   drawWalls();
   drawRectangles();
-  
+
   animateIllusion();
 }
 
@@ -100,4 +100,8 @@ function windowResized() {
     windowWidth / 2 - SIZE / 2,
     windowHeight / 2 - SIZE / 2
   );
+}
+
+function touchMoved() {
+  return false;
 }

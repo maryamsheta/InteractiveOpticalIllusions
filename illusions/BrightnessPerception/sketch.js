@@ -56,3 +56,7 @@ function windowResized() {
     windowHeight / 2 - SIZE / 2
   );
 }
+
+function touchStarted() {
+  return false; 
+}

@@ -66,3 +66,8 @@ function windowResized() {
   );
   colorPicker.position(canvasElement.x + SIZE / 4, canvasElement.y + SIZE + 10);
 }
+
+function touchMoved() {
+  return false; 
+}
+

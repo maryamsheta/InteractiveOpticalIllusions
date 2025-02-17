@@ -61,3 +61,7 @@ function windowResized() {
     windowHeight / 2 - SIZE / 2
   );
 }
+
+function touchMoved() {
+  return false; 
+}
