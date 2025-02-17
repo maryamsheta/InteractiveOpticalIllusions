@@ -29,9 +29,8 @@ function draw() {
 
   drawGround();
   drawWalls();
-
   drawRectangles();
-
+  
   animateIllusion();
 }
 
@@ -66,16 +65,6 @@ function drawRectangles() {
   fill(255);
   rect(width / 4 + 10, farY, width / 2 - 20, 10);
   rect(width / 4 + 10, nearY, width / 2 - 20, 10);
-}
-
-function drawEmoji(x, y) {
-  push();
-  fill(255);
-  textSize(50);
-  textFont("Noto Emoji");
-  textStyle(BOLD);
-  text("🧍‍", x, y);
-  pop();
 }
 
 function animateIllusion() {
