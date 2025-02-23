@@ -13,9 +13,15 @@ function setup() {
     windowHeight / 2 - SIZE / 2
   );
 
-  canvasElement.elt.addEventListener("touchstart", (e) => e.preventDefault(), {
-    passive: false,
-  });
+  canvasElement.elt.addEventListener(
+    "touchstart",
+    (e) => {
+      if (e.target === canvasElement.elt) {
+        e.preventDefault(); 
+      }
+    },
+    { passive: false }
+  );
 }
 
 function draw() {
@@ -33,7 +39,6 @@ function draw() {
   square(squareX, -65, squareSize);
 }
 
-// 🖱 Mouse Events (Desktop)
 function mousePressed() {
   checkDrag(mouseX, mouseY);
 }
@@ -51,7 +56,7 @@ function touchStarted() {
     prevTouchX = touches[0].x;
     checkDrag(touches[0].x, touches[0].y);
   }
-  return false;
+  return false; 
 }
 
 function touchMoved() {

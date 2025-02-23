@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   font-family: "Sour Gummy", sans-serif;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .container {
