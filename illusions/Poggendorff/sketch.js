@@ -14,16 +14,6 @@ function setup() {
 
   angleMode(DEGREES);
   rectMode(CENTER);
-
-  canvasElement.elt.addEventListener(
-    "touchstart",
-    (e) => {
-      if (e.target === canvasElement.elt) {
-        e.preventDefault();
-      }
-    },
-    { passive: false }
-  );
 }
 
 function draw() {
@@ -65,7 +55,7 @@ function touchStarted() {
     prevTouchY = touches[0].y;
     checkDrag(touches[0].x, touches[0].y);
   }
-  return false; 
+  return true; 
 }
 
 function touchMoved() {
