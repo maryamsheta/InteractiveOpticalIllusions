@@ -13,15 +13,6 @@ function setup() {
     windowHeight / 2 - SIZE / 2
   );
 
-  canvasElement.elt.addEventListener(
-    "touchstart",
-    (e) => {
-      if (e.target === canvasElement.elt) {
-        e.preventDefault(); 
-      }
-    },
-    { passive: false }
-  );
 }
 
 function draw() {
@@ -56,7 +47,7 @@ function touchStarted() {
     prevTouchX = touches[0].x;
     checkDrag(touches[0].x, touches[0].y);
   }
-  return false; 
+  return true; 
 }
 
 function touchMoved() {
