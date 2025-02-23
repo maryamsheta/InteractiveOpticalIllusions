@@ -8,35 +8,42 @@
 body {
   width: 100vw;
   height: 100vh;
-  padding: .5rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: Sour Gummy, sans-serif;
+  font-family: "Sour Gummy", sans-serif;
   background-color: #ffffff;
 }
 
-
-p {
-  margin: 5rem;
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 canvas {
   display: block;
   border: 2.5px solid;
   border-radius: 0.25rem;
+  position: relative;
+}
+
+p {
+  margin-top: 25rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 i {
-  padding: 2rem;
+  padding: 1rem;
   position: absolute;
   top: 10px;
   left: 10px;
   color: black;
   font-size: 2rem;
 }
+
 
 .slider {
   appearance: none;
