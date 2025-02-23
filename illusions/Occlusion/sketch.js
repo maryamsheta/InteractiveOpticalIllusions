@@ -47,7 +47,6 @@ function touchStarted() {
     prevTouchX = touches[0].x;
     checkDrag(touches[0].x, touches[0].y);
   }
-  return true; 
 }
 
 function touchMoved() {
