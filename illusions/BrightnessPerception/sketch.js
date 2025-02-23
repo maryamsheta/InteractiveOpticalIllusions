@@ -1,6 +1,5 @@
 const SIZE = 300;
 let canvasElement;
-
 let rectY = 75;
 
 function setup() {
@@ -12,6 +11,10 @@ function setup() {
 
   colorMode(HSB);
   rectMode(CENTER);
+
+  document.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+  }, { passive: false });
 }
 
 function draw() {
@@ -48,6 +51,14 @@ function draw() {
 
 function mouseDragged() {
   rectY = constrain(rectY + (mouseY - pmouseY) * 0.5, 75, 225);
+}
+
+function touchMoved() {
+  if (touches.length > 0) {
+    let deltaY = touches[0].y - pmouseY;
+    rectY = constrain(rectY + deltaY * 0.5, 75, 225);
+  }
+  return false;
 }
 
 function windowResized() {

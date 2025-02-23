@@ -4,6 +4,7 @@ let canvasElement;
 let squareX = -10;
 let drag = false;
 let squareSize = 125;
+let prevTouchX = 0;
 
 function setup() {
   canvasElement = createCanvas(SIZE, SIZE);
@@ -11,11 +12,14 @@ function setup() {
     windowWidth / 2 - SIZE / 2,
     windowHeight / 2 - SIZE / 2
   );
+
+  canvasElement.elt.addEventListener("touchstart", (e) => e.preventDefault(), {
+    passive: false,
+  });
 }
 
 function draw() {
   background(255);
-
   translate(width / 2 - 35, height / 2);
 
   noStroke();
@@ -29,31 +33,60 @@ function draw() {
   square(squareX, -65, squareSize);
 }
 
+// 🖱 Mouse Events (Desktop)
 function mousePressed() {
-  if (
-    mouseX > width / 2 - 35 + -10 &&
-    mouseX < width / 2 - 35 + (-10 + squareSize) &&
-    mouseY > height / 2 + squareX &&
-    mouseY < height / 2 + squareX + squareSize
-  ) {
+  checkDrag(mouseX, mouseY);
+}
+
+function mouseDragged() {
+  if (drag) moveSquare(mouseX - pmouseX);
+}
+
+function mouseReleased() {
+  drag = false;
+}
+
+function touchStarted() {
+  if (touches.length > 0) {
+    prevTouchX = touches[0].x;
+    checkDrag(touches[0].x, touches[0].y);
+  }
+  return false;
+}
+
+function touchMoved() {
+  if (drag && touches.length > 0) {
+    moveSquare(touches[0].x - prevTouchX);
+    prevTouchX = touches[0].x;
+  }
+  return false;
+}
+
+function touchEnded() {
+  drag = false;
+}
+
+function checkDrag(x, y) {
+  let squareLeft = width / 2 - 35 + squareX;
+  let squareRight = squareLeft + squareSize;
+  let squareTop = height / 2 - 65;
+  let squareBottom = squareTop + squareSize;
+
+  if (x > squareLeft && x < squareRight && y > squareTop && y < squareBottom) {
     drag = true;
   } else {
     squareX = -10;
   }
 }
 
-function mouseDragged() {
+function moveSquare(deltaX) {
   if (drag) {
     squareX = constrain(
-      squareX + (mouseX - pmouseX) * 0.5,
+      squareX + deltaX * 0.5,
       -squareSize,
       width - squareSize
     );
   }
-}
-
-function mouseReleased() {
-  drag = false;
 }
 
 function windowResized() {

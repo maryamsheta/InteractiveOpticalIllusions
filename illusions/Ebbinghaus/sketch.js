@@ -11,7 +11,7 @@ function setup() {
     windowWidth / 2 - SIZE / 2,
     windowHeight / 2 - SIZE / 2
   );
-  canvasElement.mouseClicked(toggleShow)
+  canvasElement.mouseClicked(toggleShow);
 }
 
 function draw() {
@@ -43,17 +43,17 @@ function draw() {
   flowerOne.drawFlower();
   flowerTwo.drawFlower();
 
-
   if (show) {
     line(0, height / 2 - centerD / 2, width, height / 2 - centerD / 2);
     line(0, height / 2 + centerD / 2, width, height / 2 + centerD / 2);
   }
 }
 
-function toggleShow(){
+function toggleShow() {
   show = !show;
+  event.preventDefault();
+  return false;
 }
-
 
 function windowResized() {
   canvasElement.position(

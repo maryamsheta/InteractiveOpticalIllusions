@@ -14,22 +14,25 @@ function setup() {
   );
 
   numStrips = SIZE / squareSize;
+
+  document.addEventListener(
+    "touchmove",
+    function (event) {
+      event.preventDefault();
+    },
+    { passive: false }
+  );
 }
 
 function draw() {
   background(255);
-
   stroke(128);
   strokeWeight(2);
 
-  // for each row
   for (let row = 0; row <= numStrips; row++) {
-    // shift if the row is odd
     let xOffset = (row % 2) * offset;
-    // for every col
     for (let col = -1; col <= numStrips; col++) {
-      // black if diagonal is odd
-      let isBlack = (col + row) % 2 != 0;
+      let isBlack = (col + row) % 2 !== 0;
       fill(isBlack ? 0 : 255);
       square(col * squareSize + xOffset, row * squareSize, squareSize);
     }
@@ -53,4 +56,19 @@ function mouseDragged() {
       offset -= 0.3;
     }
   }
+}
+
+function touchMoved() {
+  if (touches.length > 0) {
+    if (touches[0].x > pmouseX) {
+      if (offset <= squareSize) {
+        offset += 0.3;
+      }
+    } else {
+      if (offset >= -squareSize) {
+        offset -= 0.3;
+      }
+    }
+  }
+  return false;
 }

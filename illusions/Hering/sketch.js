@@ -12,7 +12,7 @@ function setup() {
     windowWidth / 2 - SIZE / 2,
     windowHeight / 2 - SIZE / 2
   );
-  canvasElement.mouseClicked(toggleAnimate)
+  canvasElement.mouseClicked(toggleAnimate);
 }
 
 function draw() {
@@ -48,6 +48,8 @@ function draw() {
 
 function toggleAnimate() {
   animate = !animate;
+  event.preventDefault();
+  return false;
 }
 
 function windowResized() {

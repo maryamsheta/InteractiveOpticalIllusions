@@ -14,6 +14,10 @@ function setup() {
   );
   angleMode(DEGREES);
   rectMode(CENTER);
+
+  canvasElement.elt.addEventListener("touchstart", (e) => e.preventDefault(), {
+    passive: false,
+  });
 }
 
 function draw() {
@@ -71,7 +75,6 @@ function drawHatchedRectangle(x, y, w, h, spacing, topLeft) {
   let xLeft = x - w / 2;
   let yTop = y - h / 2;
   let xRight = xLeft + w;
-  let yBottom = yTop + h;
 
   noFill();
   strokeWeight(2.5);
@@ -106,9 +109,19 @@ function drawHatchedRectangle(x, y, w, h, spacing, topLeft) {
 }
 
 function mouseClicked() {
-  if (fell) {
+  if (fell && !isTouchDevice()) {
     toggleHash = !toggleHash;
   }
+}
+
+function touchStarted() {
+  if (fell && isTouchDevice()) {
+    toggleHash = !toggleHash;
+  }
+}
+
+function isTouchDevice() {
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0;
 }
 
 function windowResized() {
