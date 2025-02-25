@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Sour Gummy", sans-serif;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  display: block;
+  border: 2.5px solid;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+p {
+  margin-top: 25rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+i {
+  padding: 1rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: black;
+  font-size: 2rem;
+}
