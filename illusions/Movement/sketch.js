@@ -56,10 +56,10 @@ function bounceSquare() {
   squareX += squareSpeedX;
   squareY += squareSpeedY;
 
-  if (squareX <= 0 || squareX + squareS > SIZE) {
+  if (squareX <= 0 || squareX + squareS >= SIZE) {
     squareSpeedX *= -1;
   }
-  if (squareY <= 0 || squareY + squareS > SIZE) {
+  if (squareY <= 0 || squareY + squareS >= SIZE) {
     squareSpeedY *= -1;
   }
 }
