@@ -3,9 +3,7 @@ let canvasElement;
 
 let rectS = 5;
 
-let squareS;
-let squareX = 0;
-let squareY = 0;
+let squareS,squareX,squeareY;
 
 let squareSpeedX = 3;
 let squareSpeedY = 3;
@@ -19,7 +17,9 @@ function setup() {
   );
   canvasElement.mouseClicked(toggleMove);
 
-  squareS = width / 2;
+  squareS = 40;
+  squareX = random(width)
+  squareY = random(height)
   noStroke();
 }
 
@@ -56,12 +56,22 @@ function bounceSquare() {
   squareX += squareSpeedX;
   squareY += squareSpeedY;
 
-  if (squareX <= 0 || squareX + squareS >= SIZE) {
-    squareSpeedX *= -1;
-  }
-  if (squareY <= 0 || squareY + squareS >= SIZE) {
-    squareSpeedY *= -1;
-  }
+if (squareX < 0) {
+  squareX = 0;
+  squareSpeedX *= -1;
+} else if (squareX + squareS > SIZE) {
+  squareX = SIZE - squareS;
+  squareSpeedX *= -1;
+}
+
+if (squareY < 0) {
+  squareY = 0;
+  squareSpeedY *= -1;
+} else if (squareY + squareS > SIZE) {
+  squareY = SIZE - squareS;
+  squareSpeedY *= -1;
+}
+
 }
 
 function toggleMove() {
