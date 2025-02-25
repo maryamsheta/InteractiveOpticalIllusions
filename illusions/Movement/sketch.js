@@ -17,7 +17,7 @@ function setup() {
   );
   canvasElement.mouseClicked(toggleMove);
 
-  squareS = 40;
+  squareS = 50;
   squareX = random(width)
   squareY = random(height)
   noStroke();
