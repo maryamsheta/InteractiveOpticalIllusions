@@ -40,7 +40,3 @@ class Circle {
     pop();
   }
 }
-
-function touchMoved() {
-  return;
-}

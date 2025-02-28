@@ -2,6 +2,7 @@ const SIZE = 300;
 let canvasElement;
 
 let rectY = 0;
+
 let drag = false;
 let prevTouchY = 0;
 
@@ -12,13 +13,16 @@ function setup() {
     windowHeight / 2 - SIZE / 2
   );
 
+  fill(128);
+  strokeWeight(2.5);
+
   angleMode(DEGREES);
   rectMode(CENTER);
 }
 
 function draw() {
   background(255);
-  strokeWeight(2.5);
+
   translate(width / 2, height / 2);
 
   push();
@@ -34,7 +38,6 @@ function draw() {
   line(11, 0, 11, 120); // blue line
   pop();
 
-  fill(128);
   rect(0, rectY, 40, 200);
 }
 

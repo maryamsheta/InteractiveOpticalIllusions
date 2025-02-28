@@ -48,8 +48,6 @@ function draw() {
 
 function toggleAnimate() {
   animate = !animate;
-  event.preventDefault();
-  return false;
 }
 
 function windowResized() {

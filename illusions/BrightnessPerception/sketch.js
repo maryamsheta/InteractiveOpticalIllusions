@@ -12,9 +12,7 @@ function setup() {
   colorMode(HSB);
   rectMode(CENTER);
 
-  document.addEventListener("touchmove", function (event) {
-    event.preventDefault();
-  }, { passive: false });
+  document.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
 }
 
 function draw() {

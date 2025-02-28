@@ -11,6 +11,8 @@ function setup() {
     windowHeight / 2 - SIZE / 2
   );
 
+  fill(0);
+  noStroke();
   angleMode(DEGREES);
 
   slider = createSlider(-10, 10, 0, 2)
@@ -20,10 +22,7 @@ function setup() {
 
 function draw() {
   background(255);
-
-  fill(0);
-  noStroke();
-
+  
   rotation = slider.value();
 
   drawArc(width / 4, height / 4, 60, 90 + rotation);

@@ -14,6 +14,8 @@ function setup() {
   );
 
   canvasElement.mouseClicked(toggleLines);
+
+  noStroke();
 }
 
 function draw() {
@@ -25,8 +27,6 @@ function draw() {
       rect(i, 0, rectW, height);
     }
   }
-
-  strokeWeight(0);
 
   fill(0, 0, 255);
   rect(startX, height / 2 - 30, 60, 25);
@@ -40,13 +40,13 @@ function draw() {
   }
 }
 
+function toggleLines() {
+  drawLines = !drawLines;
+}
+
 function windowResized() {
   canvasElement.position(
     windowWidth / 2 - SIZE / 2,
     windowHeight / 2 - SIZE / 2
   );
-}
-
-function toggleLines() {
-  drawLines = !drawLines;
 }

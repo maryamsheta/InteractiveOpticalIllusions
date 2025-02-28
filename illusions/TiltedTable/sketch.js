@@ -15,9 +15,7 @@ function setup() {
   angleMode(DEGREES);
   rectMode(CENTER);
 
-  canvasElement.elt.addEventListener("touchstart", (e) => e.preventDefault(), {
-    passive: false,
-  });
+  canvasElement.elt.addEventListener("touchstart", (e) => e.preventDefault(), { passive: false });
 }
 
 function draw() {

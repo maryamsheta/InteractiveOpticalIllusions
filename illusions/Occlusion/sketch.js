@@ -2,8 +2,9 @@ const SIZE = 300;
 let canvasElement;
 
 let squareX = -10;
-let drag = false;
 let squareSize = 125;
+let drag = false;
+
 let prevTouchX = 0;
 
 function setup() {
@@ -12,7 +13,6 @@ function setup() {
     windowWidth / 2 - SIZE / 2,
     windowHeight / 2 - SIZE / 2
   );
-
 }
 
 function draw() {
@@ -76,11 +76,7 @@ function checkDrag(x, y) {
 
 function moveSquare(deltaX) {
   if (drag) {
-    squareX = constrain(
-      squareX + deltaX * 0.5,
-      -squareSize,
-      width - squareSize
-    );
+    squareX = constrain(squareX + deltaX * 0.5, -squareSize - 75, width - squareSize - 35);
   }
 }
 

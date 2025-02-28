@@ -92,8 +92,6 @@ function animateIllusion() {
 function toggleAnimation() {
   if (animationAllowed) {
     animationActive = !animationActive;
-    event.preventDefault();
-    return false;
   }
 }
 

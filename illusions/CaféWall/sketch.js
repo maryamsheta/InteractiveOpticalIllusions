@@ -13,21 +13,16 @@ function setup() {
     windowHeight / 2 - SIZE / 2
   );
 
+  stroke(128);
+  strokeWeight(2);
+
   numStrips = SIZE / squareSize;
 
-  document.addEventListener(
-    "touchmove",
-    function (event) {
-      event.preventDefault();
-    },
-    { passive: false }
-  );
+  document.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
 }
 
 function draw() {
   background(255);
-  stroke(128);
-  strokeWeight(2);
 
   for (let row = 0; row <= numStrips; row++) {
     let xOffset = (row % 2) * offset;
@@ -37,13 +32,6 @@ function draw() {
       square(col * squareSize + xOffset, row * squareSize, squareSize);
     }
   }
-}
-
-function windowResized() {
-  canvasElement.position(
-    windowWidth / 2 - SIZE / 2,
-    windowHeight / 2 - SIZE / 2
-  );
 }
 
 function mouseDragged() {
@@ -71,4 +59,11 @@ function touchMoved() {
     }
   }
   return false;
+}
+
+function windowResized() {
+  canvasElement.position(
+    windowWidth / 2 - SIZE / 2,
+    windowHeight / 2 - SIZE / 2
+  );
 }
